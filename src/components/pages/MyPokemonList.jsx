@@ -9,8 +9,8 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const API_URL =
-  "https://limitless-beyond-70730.herokuapp.com" | "http://localhost:4500";
+const API_URL = "https://limitless-beyond-70730.herokuapp.com";
+// const API_URL = "http://localhost:4500/";
 
 const MyPokemonList = () => {
   const [myPokemons, setMyPokemons] = useRecoilState(myPokemonList);

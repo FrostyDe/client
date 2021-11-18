@@ -31,7 +31,6 @@ const ListPokemon = () => {
       const rand = Math.floor(Math.random() * 151);
       pokemonArray.push(await getPokemonData(rand));
     }
-    console.log(pokemonArray);
     setPokemons(pokemonArray);
     setIsloading(false);
   };

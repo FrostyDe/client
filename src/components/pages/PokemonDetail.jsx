@@ -17,9 +17,8 @@ import "react-toastify/dist/ReactToastify.css";
 import RotateLoader from "react-spinners/RotateLoader";
 import { useState } from "react";
 
-const API_URL =
-  "https://limitless-beyond-70730.herokuapp.com" | "http://localhost:4500";
-
+const API_URL = "https://limitless-beyond-70730.herokuapp.com";
+// const API_URL = "http://localhost:4500/";
 const PokemonDetail = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
