@@ -17,6 +17,9 @@ import "react-toastify/dist/ReactToastify.css";
 import RotateLoader from "react-spinners/RotateLoader";
 import { useState } from "react";
 
+const API_URL =
+  "https://limitless-beyond-70730.herokuapp.com" | "http://localhost:4500";
+
 const PokemonDetail = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -32,7 +35,7 @@ const PokemonDetail = () => {
   const catchPokemon = () => {
     setIsLoading(true);
     axios
-      .post("http://localhost:4500/catch", {
+      .post(API_URL + "/catch", {
         id: JSON.stringify(pokemonId),
       })
       .then((res) => {

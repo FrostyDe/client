@@ -9,11 +9,14 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const API_URL =
+  "https://limitless-beyond-70730.herokuapp.com" | "http://localhost:4500";
+
 const MyPokemonList = () => {
   const [myPokemons, setMyPokemons] = useRecoilState(myPokemonList);
 
   const releasePokemon = (index) => {
-    axios.get("http://localhost:4500/release").then((res) => {
+    axios.get(API_URL + "/release").then((res) => {
       if (res.data.data === "release fail") {
         toast.error(
           `Release pokemon fail. ( ${res.data.number} is not a prime number )`,
@@ -41,7 +44,7 @@ const MyPokemonList = () => {
     if (arr[index].renameId === undefined) {
       arr[index].renameId = 0;
       axios
-        .post("http://localhost:4500/rename", {
+        .post(API_URL + "/rename", {
           name: myPokemons[index].nickname,
           id: JSON.stringify(arr[index].renameId),
         })
@@ -56,7 +59,7 @@ const MyPokemonList = () => {
         });
     } else {
       axios
-        .post("http://localhost:4500/rename", {
+        .post(API_URL + "/rename", {
           name: myPokemons[index].nickname,
           id: JSON.stringify(arr[index].renameId),
         })
